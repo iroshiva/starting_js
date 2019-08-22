@@ -20,56 +20,69 @@ const books = [
 //##################################################################
 
 
-// console.log("Est-ce que tous les livres ont été au moins empruntés une fois ?");
+console.log("Est-ce que tous les livres ont été au moins empruntés une fois ?");
 
-// let all_rented=true;
+let all_rented = true;
+// on fixe une variable qui dit que tous les livres sont loués
 
-// books.forEach(book =>{
+books.forEach(book =>{
+  if (book.rented < 1){
+  // si un bouquin n'est pas loué on passe la variable à false
+     all_rented = false;
+  } 
+})
 
-//   if (book.rented < 1){
-//     all_rented = false;
-//     } 
-// })
-
-// console.log(all_rented)
+console.log(all_rented)
 
 
 //###################################
 //Quel est livre le plus emprunté ? #
 //###################################
 
-// console.log("Quel est livre le plus emprunté ?");
+console.log("Quel est livre le plus emprunté ?");
 
-// let arr_rented = new Array;
+let book_rented = new Array;
 
-// books.forEach(book =>{
-//   arr_rented.push(book.rented)
-// })
+books.forEach(book =>{
+   book_rented.push(book.rented)
+})
 
-// let index = arr_rented.indexOf(Math.max.apply(Math, arr_rented));
+let id = book_rented.indexOf(Math.max.apply(Math, book_rented));
+// fonction trouvé sur le net :)
 
-//  console.log(books[index].title);
+console.log(books[id].title);
+// on sort le titre du bouquin
 
+
+//       ##################
+      // # Autre solution #
+      // ##################
+
+
+// NE MARCHE PAS, JE NE SAIS PAS POURQUOI, ME SORT LE MOINS EMPRUNTÉ.... SI TU PEUX ME DIRE POURQUOI! ;)
 
 // function indexOfMax(books) {
 
-//   var max = books[0].rented;
+//   let max = books[0].rented;
 //   // variable max imposée à la valeur de rented de l'index 0
-//   var maxIndex = 0;
+
+//   let maxIndex = 0;
 //   // maxIndex initialisée à 0
 
-//   for (var i = 1; i < books.length; i++) {
-//       // pour chaque valeur de rented de l'index
-//       if (books[i].rented > max) {
-//         // si la valeur de rented est supérieure à celle de l'élément précédent
-//           maxIndex = i;
-//           // cette valeur devient le maxIndex
-//           max = books[i].rented;
-//           // indique l'index de la valeur du rented le plus haut
-//       }
-//   }
+//  for (let i = 1; i < books.length; i++){
+//  // pour chaque valeur de rented de l'index
+//   if (books[i].rented > max){
+//   // si la valeur de rented est supérieure à celle de l'élément précédent
 
-//   console.log(books[maxIndex].title);
+//     maxIndex = i;
+//     // la valeur de l'index devient celle de l'index 
+
+//     max = books[i].rented;
+//     // dit que la valeur du rented de cette index est le plus élevé
+//   }
+//  }
+
+// console.log(books[maxIndex].title);
 // }
 
 // indexOfMax(books)
@@ -79,40 +92,39 @@ const books = [
 // Quel est le livre le moins emprunté ? #
 //########################################
 
-// console.log("Quel est livre le moins emprunté ?");
 
-// let arr_rented = new Array;
+console.log("Quel est livre le moins emprunté ?");
 
-// books.forEach(book =>{
-//   arr_rented.push(book.rented)
-// })
+let arr_rented = new Array;
 
-// let index = arr_rented.indexOf(Math.min.apply(Math, arr_rented));
+books.forEach(book =>{
+ arr_rented.push(book.rented)
+})
 
-//  console.log(books[index].title);
+let index = arr_rented.indexOf(Math.min.apply(Math, arr_rented));
 
-// function indexOfMax(books) {
+console.log(books[index].title);
 
-//   var min = books[0].rented;
-//   // variable max imposée à la valeur de rented de l'index 0
-//   var minIndex = 0;
-//   // maxIndex initialisée à 0
+//       ##################
+      // # Autre solution #
+      // ##################
 
-//   for (var i = 1; i < books.length; i++) {
-//       // pour chaque valeur de rented de l'index
-//       if (books[i].rented < min) {
-//         // si la valeur de rented est supérieure à celle de l'élément précédent
-//           minIndex = i;
-//           // cette valeur devient le maxIndex
-//           min = books[i].rented;
-//           // indique l'index de la valeur du rented le plus haut
-//       }
-//   }
 
-//   console.log(books[minIndex].title);
-// }
+function indexOfMin(books) {
 
-// indexOfMax(books)
+ let min = books[0].rented;
+ let minIndex = 0;
+
+ for (let i = 1; i < books.length; i++){
+  if (books[i].rented < min){
+    minIndex = i;
+    min = books[i].rented;
+   }
+  }
+ console.log(books[minIndex].title);
+}
+
+indexOfMin(books)
 
 
 //####################################
@@ -120,13 +132,16 @@ const books = [
 //####################################
 
 
-// console.log("Trouve le livre avec l'ID: 873495");
+console.log("Trouve le livre avec l'ID: 873495");
 
-// books.forEach(book =>{
-//     if (book.id == 873495){
-//       console.log(book.title);
-//     }
-// })
+books.forEach(book =>{
+// pour chaque bouquin
+ if (book.id === 873495){
+ // si l'id correspond
+  console.log(book.title);
+  // sort le titre du bouquin
+ }
+})
 
 
 //######################################
@@ -136,12 +151,10 @@ const books = [
 console.log("Supprime le livre avec l'ID: 133712");
 
 function delete_id(array){
-
- console.log(array[0].id)
-
   for(let i = 0; i < array.length; i++){
     if (array[i].id === 133712){
       console.log(array.splice(i,1));
+      // .splice == ici: à l'index corrspondant, enlève cette index
     }};
   }
 

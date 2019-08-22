@@ -13,7 +13,9 @@ function acid_amin(sent){
 // si oui, remplace le codon par son acide aminé correspondant
 
 		if(["UCU" , "UCC" , "UCA" , "UCG" , "AGU" , "AGC"].includes(array[i])){
+		// si l'index contient l'un de ces trois codons
 			array.splice(i,1, 'Sérine');
+			// remplace-le par 'Sérine'
 		}else if(["CCU", "CCC" , "CCA" , "CCG"].includes(array[i])){
 			array.splice(i,1, 'Proline');
 		}else if(["UUA" , "UUG"].includes(array[i])){
@@ -31,6 +33,10 @@ function acid_amin(sent){
 
 acid_amin(arn);
 
+
+//       #############
+      // # Autre ARN #
+      // #############
 
 
 // let arn = "CCUCGCCGGUACUUCUCG";

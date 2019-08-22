@@ -22,41 +22,33 @@ const entrepreneurs = [
 
 
 //########################################################################
-//Filtre dans cette liste les entrepreneurs qui sont nés dans les années70 ##########################################################################
-	
-	// METHODE AVEC BOURCLE FOR
-
-// let number_object = entrepreneurs.length;
-// // == nbre d'entrepreneur dans l'array
-
-// for (let i = 0; i < number_object; i++){
-// 		// def d'un itérateur pour parcourir les index du tableau
-// 		// i < number_object == les index commencent à 0
-
-// 	if (1970 < entrepreneurs[i].year && entrepreneurs[i].year < 1980){
-// 		console.log(entrepreneurs[i]);
-// 	} 
-// }
+//Filtre dans cette liste les entrepreneurs qui sont nés dans les années70 //########################################################################
 
 		// METHODE forEach
 
 console.log("Voici la liste des entreprenaurs nés dans les années 70!")
 
 entrepreneurs.forEach(entrepreneur => {
+// pour chaque entrepreneur du tableau entreprneurs
+
 	if (1970 < entrepreneur.year && entrepreneur.year < 1980)
+  // si année de naissance est comprise entre 1970 et 1980
+
 	console.log(`${entrepreneur.first} ${entrepreneur.last}`)
+  // sort le nom et prénom de l'entrepreneur
 })
 
 
 
 //#####################################################################
-// Sors une array qui contient le prénom et le nom des entrepreneurs  #
+// Sors un array qui contient le prénom et le nom des entrepreneurs  #
 //#####################################################################
 
-console.log("Sors une array qui contient le prénom et le nom des entrepreneurs")
+
+console.log("Sors un array qui contient le prénom et le nom des entrepreneurs")
+
 let new_array = new Array;
-// création d'un nouvel array != ruby !!!!!!!!
-// == new Array
+// création d'un nouvel array != Array.new de ruby !!!!!!!!
 
 entrepreneurs.forEach(entrepreneur =>{
 	new_array.push(entrepreneur.first + "" + entrepreneur.last)
@@ -75,11 +67,10 @@ console.log(new_array);
 console.log("Quel âge aurait chaque inventeur aujourd'hui?")
 
 let actual_year = 2019
+// variable dont la valeur == 2019
 
 entrepreneurs.forEach(entrepreneur =>{
-
 	let age = actual_year - entrepreneur.year
-
 	console.log(`Aujourdhui, ${entrepreneur.first} ${entrepreneur.last} aurait ${age}ans!` )
 })
 
@@ -88,15 +79,16 @@ entrepreneurs.forEach(entrepreneur =>{
 // Trie les entrepreneurs par ordre alphabétique du nom de famille.#
 //##################################################################
 
+console.log("Trie les entrepreneurs par ordre alphabétique du nom de famille.")
 
-let new_array = new Array;
-// création d'un nouvel array dans lequel on va mettre les Nom de chaque entrepreneur
+let new_arr = new Array;
+// création d'un nouvel array dans lequel on va mettre les noms de chaque entrepreneur
 
 entrepreneurs.forEach(entrepreneur =>{
-	new_array.push(entrepreneur.last)
+	new_arr.push(entrepreneur.last)
 })
 	
-let tri = new_array.sort();
+let tri = new_arr.sort();
 //.sort == tri par odre alphabétique
 
 console.log(tri.join());

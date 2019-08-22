@@ -1,1 +1,3 @@
-# EXERCICE BASIQUES EN JAVASCRIPT
+# EXERCICES BASIQUES EN JAVASCRIPT
+
+# Une bonne vingtaine d'exos pour se marrer en JS ;)
