@@ -22,7 +22,7 @@ const books = [
 
 console.log("Est-ce que tous les livres ont été au moins empruntés une fois ?");
 
-let all_rented = true;
+let allRented = true;
 // on fixe une variable qui dit que tous les livres sont loués
 
 books.forEach(book =>{
@@ -32,7 +32,7 @@ books.forEach(book =>{
   } 
 })
 
-console.log(all_rented)
+console.log(allRented)
 
 
 //###################################
@@ -41,13 +41,13 @@ console.log(all_rented)
 
 console.log("Quel est livre le plus emprunté ?");
 
-let book_rented = new Array;
+let bookRented = new Array;
 
 books.forEach(book =>{
-   book_rented.push(book.rented)
+   bookRented.push(book.rented)
 })
 
-let id = book_rented.indexOf(Math.max.apply(Math, book_rented));
+let id = bookRented.indexOf(Math.max.apply(Math, bookRented));
 // fonction trouvé sur le net :)
 
 console.log(books[id].title);
@@ -95,13 +95,13 @@ console.log(books[id].title);
 
 console.log("Quel est livre le moins emprunté ?");
 
-let arr_rented = new Array;
+let arrRented = new Array;
 
 books.forEach(book =>{
- arr_rented.push(book.rented)
+ arrRented.push(book.rented)
 })
 
-let index = arr_rented.indexOf(Math.min.apply(Math, arr_rented));
+let index = arrRented.indexOf(Math.min.apply(Math, arrRented));
 
 console.log(books[index].title);
 
@@ -170,14 +170,14 @@ console.log(books);
 
 console.log("Trie les livres par ordre alphabétique (sans celui avec l'ID 133712, car il est supprimé).");
 
-let new_array = new Array;
+let newArray = new Array;
 // création d'un nouvel array dans lequel on va mettre les Nom de chaque entrepreneur
 
 books.forEach(book =>{
-  new_array.push(book.title)
+  newArray.push(book.title)
 })
   
-let tri = new_array.sort();
+let tri = newArray.sort();
 //.sort == tri par odre alphabétique
 
 console.log(tri.join());

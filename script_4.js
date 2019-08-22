@@ -47,15 +47,15 @@ entrepreneurs.forEach(entrepreneur => {
 
 console.log("Sors un array qui contient le prénom et le nom des entrepreneurs")
 
-let new_array = new Array;
+let newArray = new Array;
 // création d'un nouvel array != Array.new de ruby !!!!!!!!
 
 entrepreneurs.forEach(entrepreneur =>{
-	new_array.push(entrepreneur.first + "" + entrepreneur.last)
+	newArray.push(entrepreneur.first + "" + entrepreneur.last)
 	// .push == << de ruby == ajoute à l'array
 })
 
-console.log(new_array);
+console.log(newArray);
 // sort l'array avec nom et prénom des entrepreneurs
 
 
@@ -66,11 +66,11 @@ console.log(new_array);
 
 console.log("Quel âge aurait chaque inventeur aujourd'hui?")
 
-let actual_year = 2019
+let actualYear = 2019
 // variable dont la valeur == 2019
 
 entrepreneurs.forEach(entrepreneur =>{
-	let age = actual_year - entrepreneur.year
+	let age = actualYear - entrepreneur.year
 	console.log(`Aujourdhui, ${entrepreneur.first} ${entrepreneur.last} aurait ${age}ans!` )
 })
 
@@ -81,14 +81,14 @@ entrepreneurs.forEach(entrepreneur =>{
 
 console.log("Trie les entrepreneurs par ordre alphabétique du nom de famille.")
 
-let new_arr = new Array;
+let newArr = new Array;
 // création d'un nouvel array dans lequel on va mettre les noms de chaque entrepreneur
 
 entrepreneurs.forEach(entrepreneur =>{
-	new_arr.push(entrepreneur.last)
+	newArr.push(entrepreneur.last)
 })
 	
-let tri = new_arr.sort();
+let tri = newArr.sort();
 //.sort == tri par odre alphabétique
 
 console.log(tri.join());

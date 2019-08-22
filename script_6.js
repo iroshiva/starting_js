@@ -1,4 +1,6 @@
 
+console.log("Ci-même, la molécule correspondante à la séquence d'ARN CCGUCGUUGCGCUACAGC");
+
 let arn = "CCGUCGUUGCGCUACAGC";
 // == code ARN à déchiffrer
 
@@ -39,6 +41,7 @@ acid_amin(arn);
       // #############
 
 
+// console.log("Ci-même, la molécule correspondante à la séquence d'ARN CCUCGCCGGUACUUCUCG");
 // let arn = "CCUCGCCGGUACUUCUCG";
 
 // function acid_amin(sent){
